@@ -9,7 +9,21 @@ Life is too short to only use default Artisan commands. Give some new ones a try
 $ composer require mateusjatenee/laravel-artisan-extended
 ```
 
-### Use  
+### Use    
+
+First of all, add `Mateusjatenee\LaravelArtisanExtended\ArtisanExtendedServiceProvider::class` to your array of service providers in `config/app.php`.  
+
+```php   
+// Laravel 5: config/app.php
+'providers' => [
+    ...
+    Mateusjatenee\LaravelArtisanExtended\ArtisanExtendedServiceProvider::class,
+
+];
+
+```
+
+
 ## make:transformer  
 
 This command is particularly useful for people who build APIs. Instead of having to write a Transformer everytime, just run `make:transformer {name of the transformer} {Model}`
