@@ -39,8 +39,10 @@ class MakeTransformerCommand extends GeneratorCommand
         return __DIR__ . '/stubs/transformer.stub';
     }
 
-    public function getModel($model)
+    protected function getModel()
     {
+        $model = $this->argument('model');
+
         if (Str::contains($model, '/')) {
             $model = str_replace('/', '\\', $model);
         }
@@ -48,9 +50,9 @@ class MakeTransformerCommand extends GeneratorCommand
         return $model;
     }
 
-    public function getVariable()
+    protected function getVariable()
     {
-        $model = $this->getModel($this->argument('model'));
+        $model = $this->getModel();
 
         if (Str::contains($model, '/')) {
             $model = str_replace('/', '\\', $model);
