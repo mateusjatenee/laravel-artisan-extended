@@ -1,0 +1,14 @@
+language: php
+
+php:
+  - hhvm
+  - nightly
+  - 7.0
+
+before_script:
+  - if [[ $TRAVIS_PHP_VERSION != hhvm && $TRAVIS_PHP_VERSION != nightly ]]; then phpenv config-rm xdebug.ini; fi
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction
+
+script:
+  - composer test
