@@ -30,7 +30,7 @@ This command is particularly useful for people who build APIs. Instead of having
 
 For instance, `make:transformer Book App\Book` will give you the following code:   
 
-```  
+```php  
 
 <?php
 
